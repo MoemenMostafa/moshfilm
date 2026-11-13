@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "title": "Colors",
+  "width": 320,
+  "height": 180,
+  "fps": 10,
+  "pace": 1.0,
+  "order_pinned": false,
+  "voice": {"name": "en-US-AndrewNeural", "rate": "+8%"},
+  "music": null,
+  "scenes": [
+    {"id": "red", "title": "Red", "file": "scenes/red.js", "length": 1.0, "pinned": false, "status": "ready", "voice": {"text": "", "offset": 0.3, "pinned": false}},
+    {"id": "blue", "title": "Blue", "file": "scenes/blue.js", "length": 1.0, "pinned": false, "status": "ready", "voice": {"text": "", "offset": 0.3, "pinned": false}}
+  ],
+  "texts": []
+}

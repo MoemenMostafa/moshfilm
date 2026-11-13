@@ -1,0 +1,38 @@
+{
+  "summary": "A quiet calm music bed and two sounds on visual beats",
+  "needs_approval": false,
+  "changes": [
+    {
+      "op": "set_music",
+      "bed": {
+        "mood": "calm",
+        "tempo": 80,
+        "key": "C",
+        "scale": "major",
+        "palette": "keys",
+        "seed": 1
+      },
+      "volume": 0.5
+    },
+    {
+      "op": "add_sfx",
+      "sfx": {
+        "id": "fx1",
+        "scene": "s1",
+        "preset": "pop",
+        "at": 1.2,
+        "volume": 0.6
+      }
+    },
+    {
+      "op": "add_sfx",
+      "sfx": {
+        "id": "fx2",
+        "scene": "s2",
+        "preset": "ding",
+        "at": 0.4,
+        "volume": 0.5
+      }
+    }
+  ]
+}

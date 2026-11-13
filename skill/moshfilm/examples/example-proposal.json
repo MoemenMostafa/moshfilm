@@ -1,0 +1,32 @@
+{
+  "summary": "Scene list for a short film about binary search: two scenes to start with",
+  "needs_approval": true,
+  "changes": [
+    {
+      "op": "add_scene",
+      "scene": {
+        "id": "s1",
+        "title": "The sorted row",
+        "length": 6,
+        "status": "planned",
+        "voice": {
+          "text": "Sixteen lockers stand in a sorted row, and one of them hides the prize.",
+          "offset": 0.3
+        }
+      }
+    },
+    {
+      "op": "add_scene",
+      "scene": {
+        "id": "s2",
+        "title": "Halve the row",
+        "length": 7,
+        "status": "planned",
+        "voice": {
+          "text": "Open the middle locker. Too low? Throw away the lower half and repeat.",
+          "offset": 0.3
+        }
+      }
+    }
+  ]
+}

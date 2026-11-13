@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "title": "Shapes",
+  "width": 1280,
+  "height": 720,
+  "aspect": "16:9",
+  "second_aspect": "9:16",
+  "fps": 10,
+  "pace": 1.0,
+  "order_pinned": false,
+  "voice": {"name": "en-US-AndrewNeural", "rate": "+8%"},
+  "music": null,
+  "scenes": [
+    {"id": "fits", "title": "Fits", "file": "scenes/fits.js", "length": 4.0, "pinned": true, "status": "ready", "voice": {"text": "", "offset": 0.3, "pinned": false}},
+    {"id": "wide", "title": "Wide", "file": "scenes/wide.js", "length": 4.0, "pinned": true, "status": "ready", "voice": {"text": "", "offset": 0.3, "pinned": false}},
+    {"id": "throws", "title": "Throws", "file": "scenes/throws.js", "length": 4.0, "pinned": true, "status": "planned", "voice": {"text": "", "offset": 0.3, "pinned": false}}
+  ],
+  "texts": [
+    {"id": "t1", "scene": "fits", "text": "Hello shapes", "start": 0, "end": 4, "pinned": false, "style": "caption", "x": 0.5, "y": null}
+  ]
+}

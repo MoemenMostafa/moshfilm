@@ -1,0 +1,312 @@
+[
+  {
+    "name": "at_scene_start",
+    "film": {
+      "title": "t",
+      "scenes": [
+        {
+          "id": "s1",
+          "title": "a",
+          "length": 4.0
+        },
+        {
+          "id": "s2",
+          "title": "b",
+          "length": 3.0
+        }
+      ],
+      "sfx": [
+        {
+          "id": "fx1",
+          "scene": "s1",
+          "preset": "pop",
+          "at": 0
+        }
+      ]
+    },
+    "voice": {},
+    "starts": {
+      "fx1": 0.0
+    },
+    "audible": {
+      "fx1": 0.08
+    }
+  },
+  {
+    "name": "follows_second_scene",
+    "film": {
+      "title": "t",
+      "scenes": [
+        {
+          "id": "s1",
+          "title": "a",
+          "length": 4.0
+        },
+        {
+          "id": "s2",
+          "title": "b",
+          "length": 3.0
+        }
+      ],
+      "sfx": [
+        {
+          "id": "fx1",
+          "scene": "s2",
+          "preset": "ding",
+          "at": 0.75
+        }
+      ]
+    },
+    "voice": {},
+    "starts": {
+      "fx1": 4.75
+    },
+    "audible": {
+      "fx1": 1.2
+    }
+  },
+  {
+    "name": "after_reorder",
+    "film": {
+      "title": "t",
+      "scenes": [
+        {
+          "id": "s2",
+          "title": "b",
+          "length": 3.0
+        },
+        {
+          "id": "s1",
+          "title": "a",
+          "length": 4.0
+        }
+      ],
+      "sfx": [
+        {
+          "id": "fx1",
+          "scene": "s1",
+          "preset": "pop",
+          "at": 1.25
+        },
+        {
+          "id": "fx2",
+          "scene": "s2",
+          "preset": "tick",
+          "at": 0.5
+        }
+      ]
+    },
+    "voice": {},
+    "starts": {
+      "fx1": 4.25,
+      "fx2": 0.5
+    },
+    "audible": {
+      "fx1": 0.08,
+      "fx2": 0.02
+    }
+  },
+  {
+    "name": "late_clip_in_shortened_scene",
+    "film": {
+      "title": "t",
+      "scenes": [
+        {
+          "id": "s1",
+          "title": "a",
+          "length": 2.0,
+          "pinned": true
+        },
+        {
+          "id": "s2",
+          "title": "b",
+          "length": 3.0
+        }
+      ],
+      "sfx": [
+        {
+          "id": "fx1",
+          "scene": "s1",
+          "preset": "thud",
+          "at": 3.5
+        }
+      ]
+    },
+    "voice": {},
+    "starts": {
+      "fx1": 2.0
+    },
+    "audible": {
+      "fx1": 0.0
+    }
+  },
+  {
+    "name": "pace_stretches_scene",
+    "film": {
+      "title": "t",
+      "pace": 1.5,
+      "scenes": [
+        {
+          "id": "s1",
+          "title": "a",
+          "length": 2.0
+        },
+        {
+          "id": "s2",
+          "title": "b",
+          "length": 4.0
+        }
+      ],
+      "sfx": [
+        {
+          "id": "fx1",
+          "scene": "s2",
+          "preset": "click",
+          "at": 1.0
+        },
+        {
+          "id": "fx2",
+          "scene": "s2",
+          "preset": "click",
+          "at": 9.0
+        }
+      ]
+    },
+    "voice": {},
+    "starts": {
+      "fx1": 4.0,
+      "fx2": 9.0
+    },
+    "audible": {
+      "fx1": 0.06,
+      "fx2": 0.0
+    }
+  },
+  {
+    "name": "clip_longer_than_scene",
+    "film": {
+      "title": "t",
+      "scenes": [
+        {
+          "id": "s1",
+          "title": "a",
+          "length": 1.0,
+          "pinned": true
+        },
+        {
+          "id": "s2",
+          "title": "b",
+          "length": 3.0
+        }
+      ],
+      "sfx": [
+        {
+          "id": "fx1",
+          "scene": "s1",
+          "preset": "riser",
+          "at": 0.5
+        }
+      ]
+    },
+    "voice": {},
+    "starts": {
+      "fx1": 0.5
+    },
+    "audible": {
+      "fx1": 0.5
+    }
+  },
+  {
+    "name": "last_scene_end_still_audible",
+    "film": {
+      "title": "t",
+      "scenes": [
+        {
+          "id": "s1",
+          "title": "a",
+          "length": 2.0,
+          "pinned": true
+        }
+      ],
+      "sfx": [
+        {
+          "id": "fx1",
+          "scene": "s1",
+          "preset": "ding",
+          "at": 9.0,
+          "stretch": 2
+        }
+      ]
+    },
+    "voice": {},
+    "starts": {
+      "fx1": 2.0
+    },
+    "audible": {
+      "fx1": 0.0
+    }
+  },
+  {
+    "name": "last_scene_clamped_to_fit",
+    "film": {
+      "title": "t",
+      "scenes": [
+        {
+          "id": "s1",
+          "title": "a",
+          "length": 3.0,
+          "pinned": true
+        }
+      ],
+      "sfx": [
+        {
+          "id": "fx1",
+          "scene": "s1",
+          "preset": "ding",
+          "at": 2.9
+        }
+      ]
+    },
+    "voice": {},
+    "starts": {
+      "fx1": 2.9
+    },
+    "audible": {
+      "fx1": 0.1
+    }
+  },
+  {
+    "name": "ding_two_tenths_before_scene_end",
+    "film": {
+      "title": "t",
+      "scenes": [
+        {
+          "id": "s1",
+          "title": "a",
+          "length": 5.0,
+          "pinned": true
+        },
+        {
+          "id": "s2",
+          "title": "b",
+          "length": 3.0
+        }
+      ],
+      "sfx": [
+        {
+          "id": "fx1",
+          "scene": "s1",
+          "preset": "ding",
+          "at": 4.8
+        }
+      ]
+    },
+    "voice": {},
+    "starts": {
+      "fx1": 4.8
+    },
+    "audible": {
+      "fx1": 0.2
+    }
+  }
+]

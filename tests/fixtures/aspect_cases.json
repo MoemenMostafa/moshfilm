@@ -1,0 +1,182 @@
+[
+ {
+  "film": {
+   "width": 1280,
+   "height": 720,
+   "aspect": "16:9"
+  },
+  "aspect": "16:9",
+  "size": [
+   1280,
+   720
+  ]
+ },
+ {
+  "film": {
+   "width": 1280,
+   "height": 720,
+   "aspect": "16:9"
+  },
+  "aspect": "9:16",
+  "size": [
+   720,
+   1280
+  ]
+ },
+ {
+  "film": {
+   "width": 1280,
+   "height": 720,
+   "aspect": "16:9"
+  },
+  "aspect": "1:1",
+  "size": [
+   720,
+   720
+  ]
+ },
+ {
+  "film": {
+   "width": 1280,
+   "height": 720,
+   "aspect": "16:9"
+  },
+  "aspect": "4:5",
+  "size": [
+   720,
+   900
+  ]
+ },
+ {
+  "film": {
+   "width": 1920,
+   "height": 1080,
+   "aspect": "16:9"
+  },
+  "aspect": "16:9",
+  "size": [
+   1920,
+   1080
+  ]
+ },
+ {
+  "film": {
+   "width": 1920,
+   "height": 1080,
+   "aspect": "16:9"
+  },
+  "aspect": "9:16",
+  "size": [
+   1080,
+   1920
+  ]
+ },
+ {
+  "film": {
+   "width": 1920,
+   "height": 1080,
+   "aspect": "16:9"
+  },
+  "aspect": "1:1",
+  "size": [
+   1080,
+   1080
+  ]
+ },
+ {
+  "film": {
+   "width": 1920,
+   "height": 1080,
+   "aspect": "16:9"
+  },
+  "aspect": "4:5",
+  "size": [
+   1080,
+   1350
+  ]
+ },
+ {
+  "film": {
+   "width": 320,
+   "height": 180,
+   "aspect": "16:9"
+  },
+  "aspect": "16:9",
+  "size": [
+   320,
+   180
+  ]
+ },
+ {
+  "film": {
+   "width": 320,
+   "height": 180,
+   "aspect": "16:9"
+  },
+  "aspect": "9:16",
+  "size": [
+   180,
+   320
+  ]
+ },
+ {
+  "film": {
+   "width": 320,
+   "height": 180,
+   "aspect": "16:9"
+  },
+  "aspect": "1:1",
+  "size": [
+   180,
+   180
+  ]
+ },
+ {
+  "film": {
+   "width": 320,
+   "height": 180,
+   "aspect": "16:9"
+  },
+  "aspect": "4:5",
+  "size": [
+   180,
+   226
+  ]
+ },
+ {
+  "film": {
+   "width": 1000,
+   "height": 1000,
+   "aspect": "1:1"
+  },
+  "aspect": "1:1",
+  "size": [
+   1000,
+   1000
+  ]
+ },
+ {
+  "film": {
+   "width": 1000,
+   "height": 1000,
+   "aspect": "1:1"
+  },
+  "aspect": "9:16",
+  "size": [
+   1000,
+   1778
+  ]
+ },
+ {
+  "film": {
+   "width": 1000,
+   "height": 1000,
+   "aspect": "1:1"
+  },
+  "aspect": "16:9",
+  "size": [
+   1778,
+   1000
+  ]
+ }
+]

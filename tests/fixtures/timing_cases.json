@@ -1,0 +1,539 @@
+[
+  {
+    "name": "voice_shorter_than_scene",
+    "film": {
+      "title": "t",
+      "pace": 1.0,
+      "scenes": [
+        {
+          "id": "s1",
+          "title": "a",
+          "length": 5.0,
+          "pinned": false,
+          "voice": {
+            "text": "x",
+            "offset": 0.3,
+            "pinned": false
+          }
+        }
+      ],
+      "texts": []
+    },
+    "voice": {
+      "s1": 2.0
+    },
+    "slots": [
+      {
+        "id": "s1",
+        "start": 0.0,
+        "length": 5.0,
+        "voice_start": 0.3,
+        "voice_speed": 1.0,
+        "overflow": false
+      }
+    ],
+    "texts": [],
+    "expected_total": 5.0
+  },
+  {
+    "name": "voice_longer_sets_minimum",
+    "film": {
+      "title": "t",
+      "pace": 1.0,
+      "scenes": [
+        {
+          "id": "s1",
+          "title": "a",
+          "length": 3.0,
+          "pinned": false,
+          "voice": {
+            "text": "x",
+            "offset": 0.3,
+            "pinned": false
+          }
+        }
+      ],
+      "texts": []
+    },
+    "voice": {
+      "s1": 4.0
+    },
+    "slots": [
+      {
+        "id": "s1",
+        "start": 0.0,
+        "length": 5.1,
+        "voice_start": 0.3,
+        "voice_speed": 1.0,
+        "overflow": false
+      }
+    ],
+    "texts": [],
+    "expected_total": 5.1
+  },
+  {
+    "name": "pace_scales_unpinned",
+    "film": {
+      "title": "t",
+      "pace": 1.5,
+      "scenes": [
+        {
+          "id": "s1",
+          "title": "a",
+          "length": 4.0,
+          "pinned": false,
+          "voice": {
+            "text": "",
+            "offset": 0.3,
+            "pinned": false
+          }
+        },
+        {
+          "id": "s2",
+          "title": "b",
+          "length": 4.0,
+          "pinned": true,
+          "voice": {
+            "text": "",
+            "offset": 0.3,
+            "pinned": false
+          }
+        }
+      ],
+      "texts": []
+    },
+    "voice": {},
+    "slots": [
+      {
+        "id": "s1",
+        "start": 0.0,
+        "length": 6.0,
+        "voice_start": 0.3,
+        "voice_speed": 1.0,
+        "overflow": false
+      },
+      {
+        "id": "s2",
+        "start": 6.0,
+        "length": 4.0,
+        "voice_start": 6.3,
+        "voice_speed": 1.0,
+        "overflow": false
+      }
+    ],
+    "texts": [],
+    "expected_total": 10.0
+  },
+  {
+    "name": "pace_scales_voice_bound",
+    "film": {
+      "title": "t",
+      "pace": 1.5,
+      "scenes": [
+        {
+          "id": "s1",
+          "title": "a",
+          "length": 3.0,
+          "pinned": false,
+          "voice": {
+            "text": "x",
+            "offset": 0.3,
+            "pinned": false
+          }
+        }
+      ],
+      "texts": []
+    },
+    "voice": {
+      "s1": 4.0
+    },
+    "slots": [
+      {
+        "id": "s1",
+        "start": 0.0,
+        "length": 7.65,
+        "voice_start": 0.3,
+        "voice_speed": 1.0,
+        "overflow": false
+      }
+    ],
+    "texts": [],
+    "expected_total": 7.65
+  },
+  {
+    "name": "pace_below_one_never_cuts_voice",
+    "film": {
+      "title": "t",
+      "pace": 0.75,
+      "scenes": [
+        {
+          "id": "s1",
+          "title": "a",
+          "length": 4.0,
+          "pinned": false,
+          "voice": {
+            "text": "x",
+            "offset": 0.3,
+            "pinned": false
+          }
+        },
+        {
+          "id": "s2",
+          "title": "b",
+          "length": 4.0,
+          "pinned": false,
+          "voice": {
+            "text": "",
+            "offset": 0.3,
+            "pinned": false
+          }
+        }
+      ],
+      "texts": []
+    },
+    "voice": {
+      "s1": 4.0
+    },
+    "slots": [
+      {
+        "id": "s1",
+        "start": 0.0,
+        "length": 5.1,
+        "voice_start": 0.3,
+        "voice_speed": 1.0,
+        "overflow": false
+      },
+      {
+        "id": "s2",
+        "start": 5.1,
+        "length": 3.0,
+        "voice_start": 5.4,
+        "voice_speed": 1.0,
+        "overflow": false
+      }
+    ],
+    "texts": [],
+    "expected_total": 8.1
+  },
+  {
+    "name": "pinned_speedup",
+    "film": {
+      "title": "t",
+      "pace": 1.0,
+      "scenes": [
+        {
+          "id": "s1",
+          "title": "a",
+          "length": 4.0,
+          "pinned": true,
+          "voice": {
+            "text": "x",
+            "offset": 0.0,
+            "pinned": false
+          }
+        }
+      ],
+      "texts": []
+    },
+    "voice": {
+      "s1": 4.6
+    },
+    "slots": [
+      {
+        "id": "s1",
+        "start": 0.0,
+        "length": 4.0,
+        "voice_start": 0.0,
+        "voice_speed": 1.15,
+        "overflow": false
+      }
+    ],
+    "texts": [],
+    "expected_total": 4.0
+  },
+  {
+    "name": "pinned_overflow",
+    "film": {
+      "title": "t",
+      "pace": 1.0,
+      "scenes": [
+        {
+          "id": "s1",
+          "title": "a",
+          "length": 3.0,
+          "pinned": true,
+          "voice": {
+            "text": "x",
+            "offset": 0.0,
+            "pinned": false
+          }
+        }
+      ],
+      "texts": []
+    },
+    "voice": {
+      "s1": 4.2
+    },
+    "slots": [
+      {
+        "id": "s1",
+        "start": 0.0,
+        "length": 3.0,
+        "voice_start": 0.0,
+        "voice_speed": 1.25,
+        "overflow": true
+      }
+    ],
+    "texts": [],
+    "expected_total": 3.0
+  },
+  {
+    "name": "pinned_offset_beyond_length",
+    "film": {
+      "title": "t",
+      "pace": 1.0,
+      "scenes": [
+        {
+          "id": "s1",
+          "title": "a",
+          "length": 2.0,
+          "pinned": true,
+          "voice": {
+            "text": "x",
+            "offset": 2.5,
+            "pinned": false
+          }
+        }
+      ],
+      "texts": []
+    },
+    "voice": {
+      "s1": 1.0
+    },
+    "slots": [
+      {
+        "id": "s1",
+        "start": 0.0,
+        "length": 2.0,
+        "voice_start": 2.5,
+        "voice_speed": 1.25,
+        "overflow": true
+      }
+    ],
+    "texts": [],
+    "expected_total": 2.0
+  },
+  {
+    "name": "text_follows_scene",
+    "film": {
+      "title": "t",
+      "pace": 1.0,
+      "scenes": [
+        {
+          "id": "s1",
+          "title": "a",
+          "length": 5.0,
+          "pinned": false,
+          "voice": {
+            "text": "",
+            "offset": 0.3,
+            "pinned": false
+          }
+        },
+        {
+          "id": "s2",
+          "title": "b",
+          "length": 3.0,
+          "pinned": false,
+          "voice": {
+            "text": "",
+            "offset": 0.3,
+            "pinned": false
+          }
+        }
+      ],
+      "texts": [
+        {
+          "id": "t1",
+          "scene": "s2",
+          "text": "open end",
+          "start": 0.5,
+          "end": null,
+          "pinned": false
+        },
+        {
+          "id": "t2",
+          "scene": "s2",
+          "text": "clamped",
+          "start": 1.0,
+          "end": 10.0,
+          "pinned": false
+        },
+        {
+          "id": "t3",
+          "scene": "s2",
+          "text": "kept",
+          "start": 1.0,
+          "end": 10.0,
+          "pinned": true
+        },
+        {
+          "id": "t4",
+          "scene": "s2",
+          "text": "late",
+          "start": 4.0,
+          "end": null,
+          "pinned": false
+        }
+      ]
+    },
+    "voice": {},
+    "slots": [
+      {
+        "id": "s1",
+        "start": 0.0,
+        "length": 5.0,
+        "voice_start": 0.3,
+        "voice_speed": 1.0,
+        "overflow": false
+      },
+      {
+        "id": "s2",
+        "start": 5.0,
+        "length": 3.0,
+        "voice_start": 5.3,
+        "voice_speed": 1.0,
+        "overflow": false
+      }
+    ],
+    "texts": [
+      {
+        "id": "t1",
+        "start": 5.5,
+        "end": 8.0
+      },
+      {
+        "id": "t2",
+        "start": 6.0,
+        "end": 8.0
+      },
+      {
+        "id": "t3",
+        "start": 6.0,
+        "end": 15.0
+      },
+      {
+        "id": "t4",
+        "start": 8.0,
+        "end": 8.0
+      }
+    ],
+    "expected_total": 8.0
+  },
+  {
+    "name": "unpinned_floor_min_scene",
+    "film": {
+      "title": "t",
+      "pace": 1.0,
+      "scenes": [
+        {
+          "id": "s1",
+          "title": "a",
+          "length": 0.4,
+          "pinned": false,
+          "voice": {
+            "text": "",
+            "offset": 0.3,
+            "pinned": false
+          }
+        },
+        {
+          "id": "s2",
+          "title": "b",
+          "length": 2.0,
+          "pinned": false,
+          "voice": {
+            "text": "",
+            "offset": 0.3,
+            "pinned": false
+          }
+        }
+      ],
+      "texts": []
+    },
+    "voice": {},
+    "slots": [
+      {
+        "id": "s1",
+        "start": 0.0,
+        "length": 0.5,
+        "voice_start": 0.3,
+        "voice_speed": 1.0,
+        "overflow": false
+      },
+      {
+        "id": "s2",
+        "start": 0.5,
+        "length": 2.0,
+        "voice_start": 0.8,
+        "voice_speed": 1.0,
+        "overflow": false
+      }
+    ],
+    "texts": [],
+    "expected_total": 2.5
+  },
+  {
+    "name": "rounding_ties_half_even",
+    "film": {
+      "title": "t",
+      "pace": 1.0,
+      "scenes": [
+        {
+          "id": "s1",
+          "title": "a",
+          "length": 1.0625,
+          "pinned": true,
+          "voice": {
+            "text": "",
+            "offset": 0.0625,
+            "pinned": false
+          }
+        },
+        {
+          "id": "s2",
+          "title": "b",
+          "length": 0.5625,
+          "pinned": true,
+          "voice": {
+            "text": "",
+            "offset": 0.0625,
+            "pinned": false
+          }
+        }
+      ],
+      "texts": []
+    },
+    "voice": {},
+    "slots": [
+      {
+        "id": "s1",
+        "start": 0.0,
+        "length": 1.062,
+        "voice_start": 0.062,
+        "voice_speed": 1.0,
+        "overflow": false
+      },
+      {
+        "id": "s2",
+        "start": 1.062,
+        "length": 0.562,
+        "voice_start": 1.125,
+        "voice_speed": 1.0,
+        "overflow": false
+      }
+    ],
+    "texts": [],
+    "expected_total": 1.624
+  }
+]

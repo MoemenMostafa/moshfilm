@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "moshfilm"
+version = "1.0.0"
+description = "Claude Code builds motion-graphics films; you watch, adjust timing and comment in a browser editor."
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Moamen Mostafa" }]
+keywords = ["motion graphics", "video", "animation", "claude-code", "narration"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Web Environment",
+    "Intended Audience :: End Users/Desktop",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Multimedia :: Video",
+]
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn>=0.27",
+    "starlette>=0.37",
+    "watchfiles>=0.21",
+    "pydantic>=2",
+    "filelock>=3.11",
+    "edge-tts>=7.0",
+    "playwright>=1.45",
+    "python-multipart>=0.0.9",
+    "truststore>=0.9",
+    "numpy>=1.26",
+]
+
+[project.urls]
+Homepage = "https://github.com/moemenmostafa/moshfilm"
+Issues = "https://github.com/moemenmostafa/moshfilm/issues"
+
+[project.optional-dependencies]
+dev = ["pytest", "httpx"]
+
+[project.scripts]
+moshfilm = "moshfilm.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+moshfilm = ["static/**", "samples/**"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore:Using .httpx. with .starlette.testclient"]
+markers = ["slow: needs ffmpeg or Playwright Chromium; skipped when the tool is missing"]

@@ -1,0 +1,58 @@
+/* Timeline clips shared by the four lanes: lane colour + icon (colour is never the only cue), 8px radius,
+   grip with a 10px hit area, double ring when selected, hatched drafts. Position and size stay in each lane. */
+.tl-clip {
+  position: absolute; box-sizing: border-box; display: flex; align-items: center; gap: 6px; padding: 0 14px 0 8px;
+  border: 1px solid var(--edge); border-radius: var(--r-ctl); background: var(--bg-c); color: var(--fg);
+  font-size: var(--fs-sec); line-height: 1.2; overflow: hidden; white-space: nowrap; cursor: grab; user-select: none;
+}
+.tl-clip > .ico { width: 12px; height: 12px; opacity: 0.85; }
+.tl-clip:hover { filter: brightness(0.97); }
+:root[data-theme="dark"] .tl-clip:hover { filter: brightness(1.12); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tl-clip:hover { filter: brightness(1.12); } }
+.tl-clip.selected { box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--focus); z-index: 2; }
+.tl-clip.moving { opacity: 0.75; z-index: 3; cursor: grabbing; }
+.tl-clip.hatched {
+  border-style: dashed;
+  background-image: repeating-linear-gradient(135deg, transparent 0 6px, color-mix(in srgb, currentColor 12%, transparent) 6px 12px);
+}
+.tl-clip.overflow { --bg-c: var(--warn-bg); --fg: var(--warn); --edge: var(--warn-edge); }
+.tl-clip.editing { width: auto !important; min-width: 260px; overflow: visible; z-index: 6; background: var(--surface); padding: 0 var(--s1); color: var(--text); }
+
+.k-scene { --bg-c: var(--scene-bg); --fg: var(--scene-fg); --edge: var(--scene-edge); }
+.k-text { --bg-c: var(--text-bg); --fg: var(--text-fg); --edge: var(--text-edge); }
+.k-voice { --bg-c: var(--voice-bg); --fg: var(--voice-fg); --edge: var(--voice-edge); }
+.k-sfx { --bg-c: var(--sfx-bg); --fg: var(--sfx-fg); --edge: var(--sfx-edge); }
+.k-music { --bg-c: var(--music-bg); --fg: var(--music-fg); --edge: var(--music-edge); }
+
+.tl-name { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; font-weight: 600; }
+.tl-len { margin-left: auto; padding-left: var(--s1); opacity: 0.8; font-size: var(--fs-meta); font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.tl-sub { opacity: 0.8; font-size: var(--fs-meta); }
+
+/* the grip: always visible, 10px wide hit area */
+.tl-grip {
+  position: absolute; top: 0; bottom: 0; right: 0; width: 10px; display: grid; place-items: center; cursor: ew-resize;
+  background: color-mix(in srgb, currentColor 18%, transparent); border-left: 1px solid color-mix(in srgb, currentColor 35%, transparent);
+}
+.tl-grip::after { content: ""; height: 12px; width: 4px; border-left: 1.5px solid currentColor; border-right: 1.5px solid currentColor; opacity: 0.7; }
+.tl-grip:hover { background: color-mix(in srgb, currentColor 30%, transparent); }
+.tl-grip.l { right: auto; left: 0; border-left: 0; border-right: 1px solid color-mix(in srgb, currentColor 35%, transparent); }
+
+/* small icon buttons that live on a clip: remove and unpin */
+.tl-x, .tl-pin {
+  position: absolute; top: 50%; transform: translateY(-50%); display: grid; place-items: center; opacity: 0; pointer-events: none; width: 18px; height: 18px; padding: 0;
+  border: 0; border-radius: 6px; cursor: pointer; background: color-mix(in srgb, var(--surface) 88%, transparent); color: var(--warn);
+}
+.tl-x { right: 14px; }
+.tl-x:hover { background: var(--surface); }
+.tl-x .ico, .tl-pin .ico { width: 10px; height: 10px; }
+.tl-clip:hover .tl-x, .tl-clip.selected .tl-x, .tl-clip:focus-within .tl-x { opacity: 1; pointer-events: auto; }
+.tl-pin { opacity: 1; pointer-events: auto; right: 14px; color: var(--fg); background: transparent; }
+.tl-pin + .tl-x { right: 34px; }
+.tl-pin:hover { background: color-mix(in srgb, currentColor 20%, transparent); }
+.tl-x:focus-visible, .tl-pin:focus-visible { outline-offset: 0; }
+
+/* an empty lane is a dashed drop target with one action link */
+.empty-lane {
+  position: absolute; inset: 0; box-sizing: border-box; display: flex; align-items: center; gap: var(--s1); padding: 0 var(--s3);
+  border: 1px dashed var(--border-strong); border-radius: var(--r-ctl); color: var(--muted); font-size: var(--fs-sec); white-space: nowrap;
+}

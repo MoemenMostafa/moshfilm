@@ -1,0 +1,108 @@
+/* Design tokens: one definition per colour, light first, dark second (light-dark picks by the used colour scheme).
+   System is the default (color-scheme: light dark follows the OS); data-theme on <html> forces light or dark. */
+:root {
+  color-scheme: light dark;
+
+  --bg: light-dark(#f6f7f9, #12151c);
+  --surface: light-dark(#ffffff, #181c25);
+  --surface-2: light-dark(#eef0f4, #20252f);
+  --border: light-dark(#d5d9e2, #2c3340);
+  --border-strong: light-dark(#7b8497, #6b7487);
+  --text: light-dark(#1b2230, #e6e9f0);
+  --muted: light-dark(#586175, #9aa3b5);
+  --accent: light-dark(#4338ca, #8b93ff);
+  --accent-hover: light-dark(#3730a3, #a5abff);
+  --on-accent: light-dark(#ffffff, #10131a);
+  --accent-soft: light-dark(#e8e9fd, #272b52);
+  --focus: light-dark(#4338ca, #a5abff);
+  --playhead: light-dark(#d92d20, #ff6b60);
+  --ok: light-dark(#157347, #5fd394);
+  --warn: light-dark(#b42318, #ff9a92);
+  --warn-bg: light-dark(#fdecea, #3a1b1d);
+  --warn-edge: light-dark(#b42318, #ff9a92);
+  --danger: light-dark(#b42318, #c0382f);
+  --on-danger: #ffffff;
+
+  --scene-bg: light-dark(#d6e6ff, #1e3556);
+  --scene-fg: light-dark(#0f2a52, #d6e6ff);
+  --scene-edge: light-dark(#3b6fd0, #7aa5f0);
+  --text-bg: light-dark(#fde9b0, #4a3510);
+  --text-fg: light-dark(#4a2f00, #fde9b0);
+  --text-edge: light-dark(#b97a00, #e0a93a);
+  --voice-bg: light-dark(#d3f2dc, #17402b);
+  --voice-fg: light-dark(#0b3d22, #d3f2dc);
+  --voice-edge: light-dark(#2f9e5b, #4fbf80);
+  --music-bg: light-dark(#e7ddff, #3a2a66);
+  --music-fg: light-dark(#3b1d7a, #e7ddff);
+  --music-edge: light-dark(#7c5ad6, #a58cf0);
+  --sfx-bg: light-dark(#ffd9e8, #5a1f3d);
+  --sfx-fg: light-dark(#6a1342, #ffd9e8);
+  --sfx-edge: light-dark(#c2417f, #ee86b6);
+
+  --stage-bg: light-dark(#14161c, #07080b);
+  --ctrl-bg: light-dark(#ffffff, #181c25);
+  --scrim: rgba(8, 10, 16, 0.5);
+
+  /* the one shadow */
+  --shadow: 0 1px 2px light-dark(rgba(16, 24, 40, 0.08), rgba(0, 0, 0, 0.5)),
+    0 4px 12px light-dark(rgba(16, 24, 40, 0.06), rgba(0, 0, 0, 0.35));
+
+  /* 4px spacing grid, radii and the three text sizes */
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 20px; --s6: 24px;
+  --r-ctl: 8px; --r-card: 12px; --r-pill: 999px;
+  --fs-body: 13px; --fs-sec: 12px; --fs-meta: 11px;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
+
+html, body, #app { height: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: var(--fs-body)/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+button, input, select, textarea { font: inherit; color: inherit; }
+.mono { font-variant-numeric: tabular-nums; font-family: var(--font-mono); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* one focus ring for everything focusable */
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+input[type="range"] { accent-color: var(--accent); }
+input[type="range"]:focus-visible { outline-offset: 4px; }
+::selection { background: var(--accent-soft); }
+
+/* buttons: default = secondary (outlined), .primary filled, .ghost bare, .icon square, .on pressed-toggle */
+.btn {
+  box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; gap: var(--s2);
+  min-height: 28px; padding: 4px 12px; border: 1px solid var(--border-strong); border-radius: var(--r-ctl);
+  background: var(--surface); color: var(--text); cursor: pointer; font-size: var(--fs-sec); font-weight: 500;
+  line-height: 1.2; white-space: nowrap; text-decoration: none;
+}
+.btn:hover:not(:disabled) { background: var(--surface-2); }
+.btn:active:not(:disabled) { transform: translateY(1px); }
+.btn:disabled { opacity: 0.55; cursor: default; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 600; }
+.btn.primary:hover:not(:disabled) { background: var(--accent-hover); border-color: var(--accent-hover); }
+.btn.ghost { border-color: transparent; background: transparent; color: var(--muted); }
+.btn.ghost:hover:not(:disabled) { background: var(--surface-2); color: var(--text); }
+.btn.icon { width: 28px; padding: 0; }
+.btn.on { background: var(--accent-soft); border-color: var(--accent); color: var(--text); }
+.btn.danger { background: var(--danger); border-color: var(--danger); color: var(--on-danger); font-weight: 600; }
+.btn.danger:hover:not(:disabled) { filter: brightness(1.1); background: var(--danger); }
+.btn.sm { min-height: 24px; padding: 2px 8px; font-size: var(--fs-meta); }
+.btn.link { border: 0; background: none; min-height: 0; padding: 0; color: var(--accent); text-decoration: underline; font-weight: 500; }
+.btn.link:hover:not(:disabled) { background: none; color: var(--accent-hover); }
+.ico { width: 14px; height: 14px; fill: currentColor; flex: none; }
+
+.pill {
+  display: inline-flex; align-items: center; gap: 6px; padding: 2px 8px; border-radius: var(--r-pill);
+  font-size: var(--fs-meta); font-weight: 600; background: var(--surface-2); color: var(--muted); border: 1px solid var(--border);
+}
+.pill i { width: 8px; height: 8px; border-radius: 50%; background: var(--border-strong); }
+.pill.ok i { background: var(--ok); }
+
+.kbd { border: 1px solid var(--border-strong); border-bottom-width: 2px; border-radius: 4px; padding: 0 4px;
+  font-size: var(--fs-meta); background: var(--surface); color: var(--text); font-family: inherit; }
+
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
